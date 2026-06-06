@@ -1,4 +1,5 @@
-﻿package com.example.diet_analysis.controller;
+﻿// BOM removed
+package com.example.diet_analysis.controller;
 
 import com.example.diet_analysis.model.DailyStats;
 import org.springframework.web.bind.annotation.GetMapping;

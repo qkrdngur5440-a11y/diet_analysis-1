@@ -5,7 +5,10 @@ WORKDIR /app
 COPY pom.xml .
 RUN mvn dependency:go-offline -B
 COPY src ./src
-RUN mvn package -DskipTests -B
+# Ensure Java source files do not contain BOMs that break the compiler
+RUN apt-get update && apt-get install -y dos2unix \
+	&& find src -type f -name '*.java' -exec dos2unix {} \; \
+	&& mvn package -DskipTests -B
 
 # Run Stage
 FROM eclipse-temurin:11-jre

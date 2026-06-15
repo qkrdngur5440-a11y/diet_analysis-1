@@ -13,7 +13,7 @@ import com.example.diet_analysis.model.DietAnalysisResponse;
 import com.example.diet_analysis.model.EstimatedFood;
 
 import java.util.List;
-
+ 
 @RestController
 @RequestMapping("/api/analysis")
 public class AnalysisController {
